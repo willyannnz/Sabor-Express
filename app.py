@@ -19,22 +19,26 @@ def show_menu():
     print('3. Ativar restaurante')
     print('4. Sair\n')
 
-def register_restaurant():
+def clean_terminal_and_show_subtitle(subtitle):
     os.system('cls')
-    print('Cadastro de novos restaurantes\n')
+    print(subtitle)
+
+def return_to_main_menu():
+    input('Pressione qualquer tecla para voltar ao menu')
+    main()
+
+def register_restaurant():
+    clean_terminal_and_show_subtitle('Cadastro de novos restaurantes')
     restaurant_name = input('Digite o nome do restaurante: ')
     restaurants.append(restaurant_name)
     print(f'O Restaurante {restaurant_name} cadastrado com sucesso!')
-    input('Pressione qualquer tecla para voltar ao menu principal...')
-    main()
+    return_to_main_menu()
 
 def list_restaurants():
-    os.system('cls')
-    print('Lista de restaurantes:\n')
+    clean_terminal_and_show_subtitle('Lista de restaurantes: ')
     for restaurant in restaurants:
         print(f'- {restaurant}')
-    input('\nPressione qualquer tecla para voltar ao menu principal...')
-    main()
+    return_to_main_menu()
 
 def chosen_option():
     try:
@@ -55,13 +59,10 @@ def chosen_option():
 
 def option_not_found():
     print('Opção inválida')
-    input('Pressione qualquer tecla para voltar ao menu principal...')
-    main()
+    return_to_main_menu()
 
 def finish_program():
-    os.system('cls')
-    # os.system('clear') in macOS ou Linux
-    print('Finalizando app...')
+    clean_terminal_and_show_subtitle('Programa finalizado com sucesso!')
 
 def main():
     os.system('cls')
