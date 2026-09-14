@@ -1,6 +1,8 @@
 import os
 
-restaurants = ['Pizzaria do Zé', 'Churrascaria do João', 'Restaurante da Maria']
+restaurants = [{'nome': 'Bico de brasa', 'categoria': 'Comida Brasileira', 'ativo': True}, 
+               {'nome': 'Pizza Suprema', 'categoria': 'Pizzas', 'ativo': False},
+               {'nome': 'Sabor da Terra', 'categoria': 'Comida Brasileira', 'ativo': False}]
 
 def show_program_name():
     print("""
@@ -37,7 +39,10 @@ def register_restaurant():
 def list_restaurants():
     clean_terminal_and_show_subtitle('Lista de restaurantes: ')
     for restaurant in restaurants:
-        print(f'- {restaurant}')
+        restaurant_name = restaurant['nome']
+        restaurant_category = restaurant['categoria']
+        restaurant_status = 'Ativo' if restaurant['ativo'] else 'Inativo'
+        print(f'Nome: {restaurant_name} | Categoria: {restaurant_category} | Status: {restaurant_status}')
     return_to_main_menu()
 
 def chosen_option():
