@@ -32,7 +32,9 @@ def return_to_main_menu():
 def register_restaurant():
     clean_terminal_and_show_subtitle('Cadastro de novos restaurantes')
     restaurant_name = input('Digite o nome do restaurante: ')
-    restaurants.append(restaurant_name)
+    category = input('Digite a categoria do restaurante: ')
+    data_restaurant = {'nome': restaurant_name, 'categoria': category, 'ativo': False}
+    restaurants.append(data_restaurant)
     print(f'O Restaurante {restaurant_name} cadastrado com sucesso!')
     return_to_main_menu()
 
