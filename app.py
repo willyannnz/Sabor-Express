@@ -23,13 +23,13 @@ def show_menu():
 
 def clean_terminal_and_show_subtitle(subtitle):
     os.system('cls')
-    line = '-' * (len(subtitle))
+    line = '=' * (len(subtitle))
     print(line)
     print(subtitle)
     print(line)
 
 def return_to_main_menu():
-    input('Pressione qualquer tecla para voltar ao menu')
+    input('\nPressione qualquer tecla para voltar ao menu')
     main()
 
 def register_restaurant():
@@ -43,11 +43,12 @@ def register_restaurant():
 
 def list_restaurants():
     clean_terminal_and_show_subtitle('Lista de restaurantes: ')
+    print(f'{"Nome do restaurante:".ljust(21)} |{"Categoria:".ljust(20)} |{"Status:"}')
     for restaurant in restaurants:
         restaurant_name = restaurant['nome']
         restaurant_category = restaurant['categoria']
         restaurant_status = 'Ativo' if restaurant['ativo'] else 'Inativo'
-        print(f'Nome: {restaurant_name.ljust(20)} | Categoria: {restaurant_category.ljust(20)} | Status: {restaurant_status}')
+        print(f'-{restaurant_name.ljust(20)} |{restaurant_category.ljust(20)} |{restaurant_status}')
     return_to_main_menu()
 
 def activate_restaurant():
