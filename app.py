@@ -47,7 +47,7 @@ def list_restaurants():
         restaurant_name = restaurant['nome']
         restaurant_category = restaurant['categoria']
         restaurant_status = 'Ativo' if restaurant['ativo'] else 'Inativo'
-        print(f'Nome: {restaurant_name} | Categoria: {restaurant_category} | Status: {restaurant_status}')
+        print(f'Nome: {restaurant_name.ljust(20)} | Categoria: {restaurant_category.ljust(20)} | Status: {restaurant_status}')
     return_to_main_menu()
 
 def activate_restaurant():
