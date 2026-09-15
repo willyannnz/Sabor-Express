@@ -18,12 +18,15 @@ def show_program_name():
 def show_menu():
     print('1. Cadastrar restaurante')
     print('2. Listar restaurantes')
-    print('3. Ativar restaurante')
+    print('3. Alternar estado do restaurante')
     print('4. Sair\n')
 
 def clean_terminal_and_show_subtitle(subtitle):
     os.system('cls')
+    line = '-' * (len(subtitle))
+    print(line)
     print(subtitle)
+    print(line)
 
 def return_to_main_menu():
     input('Pressione qualquer tecla para voltar ao menu')
