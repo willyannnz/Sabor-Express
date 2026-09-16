@@ -13,10 +13,7 @@ class Restaurant:
     def list_restaurants():
         print(f'{"Nome do restaurante:".ljust(21)} |{"Categoria:".ljust(20)} |{"Status:"}')
         for restaurant in Restaurant.restaurants:
-            restaurant_name = restaurant.name
-            restaurant_category = restaurant.category
-            restaurant_status = 'Ativo' if restaurant.active else 'Inativo'
-            print(f'-{restaurant_name.ljust(20)} |{restaurant_category.ljust(20)} |{restaurant_status}')
+            print(f'-{restaurant.name.ljust(20)} |{restaurant.category.ljust(20)} |{restaurant.active and "Ativo" or "Inativo"}')
 
 restaurant_praca = Restaurant('Restaurante da Praça', 'Comida Caseira')
 restaurant_pizza = Restaurant('Pizzaria Express', 'Pizza')
