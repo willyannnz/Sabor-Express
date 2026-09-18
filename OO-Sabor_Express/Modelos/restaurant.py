@@ -20,11 +20,5 @@ class Restaurant:
     def active(self):
         return '✅' if self._active else '❌'
 
-    def alter_activate(self):
+    def alter_status(self):
         self._active = not self._active
-
-restaurant_praca = Restaurant('Restaurante da Praça', 'Comida Caseira')
-restaurant_praca.alter_activate()
-restaurant_pizza = Restaurant('Pizzaria Express', 'Pizza')
-
-Restaurant.list_restaurants()
