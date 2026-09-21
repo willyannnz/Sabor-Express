@@ -1,4 +1,4 @@
-from modelos.review import Review
+from models.review import Review
 
 class Restaurant:
     """Represents a restaurant, with a name, category, status and reviews."""

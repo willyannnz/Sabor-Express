@@ -1,14 +1,15 @@
-from modelos.restaurant import Restaurant
+from models.restaurant import Restaurant
+from models.menu.drink import Drink
+from models.menu.plate import Plate
 
 restaurant_praca = Restaurant('Restaurante da Praça', 'Comida Caseira')
-restaurant_praca.get_review('Gui', 10)
-restaurant_praca.get_review('Lais', 8)
-restaurant_praca.get_review('Evelyn', 5)
-
+drink_juice = Drink('Suco de laranja', 5.0, 'grande')
+plate_bread = Plate('Pãozinho', 2.0, 'O melhor da cidade') 
 
 
 def main():
-    Restaurant.list_restaurants()
+    print(drink_juice)
+    print(plate_bread)
 
 if __name__ == '__main__':
     main()
