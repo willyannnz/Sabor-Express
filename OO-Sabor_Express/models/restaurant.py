@@ -1,5 +1,5 @@
 from models.review import Review
-
+from models.menu.menu_item import MenuItem
 class Restaurant:
     """Represents a restaurant, with a name, category, status and reviews."""
 
@@ -77,3 +77,7 @@ class Restaurant:
 
     def add_plate_to_menu(self, plate):
         self._menu.append(plate)
+
+    def add_to_the_menu(self, item):
+        if isinstance(item, MenuItem):
+            self._menu.append(item)
