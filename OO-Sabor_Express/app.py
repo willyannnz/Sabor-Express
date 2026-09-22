@@ -9,8 +9,7 @@ restaurant_praca.add_to_the_menu(drink_juice)
 restaurant_praca.add_to_the_menu(plate_bread)
 
 def main():
-    print(drink_juice)
-    print(plate_bread)
+    restaurant_praca.show_menu
 
 if __name__ == '__main__':
     main()  

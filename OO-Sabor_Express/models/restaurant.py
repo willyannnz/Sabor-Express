@@ -72,12 +72,18 @@ class Restaurant:
         average = round(sum_of_the_ratings / quantity_of_ratings, 1)
         return average
 
-    def add_drink_to_menu(self, drink):
-        self._menu.append(drink)
-
-    def add_plate_to_menu(self, plate):
-        self._menu.append(plate)
-
     def add_to_the_menu(self, item):
         if isinstance(item, MenuItem):
             self._menu.append(item)
+
+    @property
+    def show_menu(self):
+        print(f'Cardápio do restaurante {self._name}\n')
+        for i,item in enumerate(self._menu, start = 1):
+            if hasattr(item, 'description'):
+                message_plate = f'{i}. Nome: {item._name} | Preço: R${item._price} | Descrição: {item.description}'
+                print(message_plate)
+            else: 
+                message_drink = f'{i}. Nome: {item._name} | Preço: R${item._price} | Tamanho: {item.size}'
+                print(message_drink)
+
