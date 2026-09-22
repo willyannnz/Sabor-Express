@@ -16,6 +16,7 @@ class Restaurant:
         self.category = category.upper()  # restaurant category, formatted (UPPERCASE)
         self._active = False  # active status, starts as inactive
         self._review = []  # here will stores the reviews
+        self._menu = [] # This will stores the menu itens
         Restaurant.restaurants.append(self)  # auto-register this instance in the shared list
 
     def __str__(self):
@@ -70,3 +71,9 @@ class Restaurant:
         quantity_of_ratings = len(self._review)
         average = round(sum_of_the_ratings / quantity_of_ratings, 1)
         return average
+
+    def add_drink_to_menu(self, drink):
+        self._menu.append(drink)
+
+    def add_plate_to_menu(self, plate):
+        self._menu.append(plate)
