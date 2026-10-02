@@ -1,4 +1,5 @@
 import requests
+import json
 
 url = 'https://guilhermeonrails.github.io/api-restaurantes/restaurantes.json'
 #Here is the code to make a GET request to the URL and store the response in a variable called 'response'.
@@ -22,4 +23,7 @@ if response.status_code == 200:
 else:
     print(f"Failed to retrieve data. Status code: {response.status_code}")
 
-print(data_restaurants['McDonald’s'])
+for restaurant_name, data in data_restaurants.items():
+    file_name = f"{restaurant_name}.json"
+    with open(file_name, 'w') as file_restaurant:
+        json.dump(data, file_restaurant, indent=4)
